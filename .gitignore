@@ -21,3 +21,76 @@ node_modules/
 
 # Ignore my todo
 TODO.txt
+
+
+# Ignore vendor directory
+vendor/
+
+# Ignore composer.lock
+composer.lock
+
+# Ignore npm packages
+package-lock.json
+node_modules/
+
+# Ignore build artifacts
+build/
+dist/
+
+# Ignore logs
+*.log
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+
+# Ignore cache files
+.cache/
+
+# Ignore compiled files
+*.min.js
+*.min.css
+
+# Ignore temporary files
+*.tmp
+
+# Ignore backup files
+*.bak
+*.swp
+*.swo
+
+# Ignore database files
+*.sqlite
+*.db
+
+# Ignore session files
+session/
+
+# Ignore configuration files with sensitive information
+config.ini
+config.php
+
+# Ignore generated documentation
+docs/
+
+# Ignore user uploads
+uploads/
+
+# Ignore compiled templates
+*.tpl.php
+
+# Ignore temporary development files
+*.tmp.php
+
+# Ignore development environment files
+.env.local
+.env.dev
+.env.prod
+
+# Ignore build scripts
+build.sh
+build.bat
+
+# Ignore deployment scripts
+deploy.sh
+deploy.bat
