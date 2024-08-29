@@ -1,0 +1,104 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About TFN Music Services</title>
+      <style>
+          body, html {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, sans-serif;
+              height: 100%;
+              background: linear-gradient(135deg, #1e0f30, #130a2a);
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .container {
+              display: flex;
+              max-width: 1000px;
+              padding: 20px;
+          }
+          .image-container {
+              flex: 1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .content {
+              flex: 1;
+              padding: 0 20px;
+          }
+          h1 {
+              font-size: 2.5em;
+              margin-bottom: 20px;
+          }
+          p {
+              font-size: 1em;
+              line-height: 1.6;
+          }
+          #shape {
+              width: 300px;
+              height: 300px;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="image-container">
+              <canvas id="shape"></canvas>
+          </div>
+          <div class="content">
+              <h1>ABOUT<br>TFN MUSIC SERVICES</h1>
+              <p id="description">
+                  What's special about your product, service, or company?
+                  Use this space to highlight the things that set you apart
+                  from your competition, whether it's a special feature, a
+                  unique philosophy, or awards and recognition that you
+                  have received. Think of this as your elevator pitch to get
+                  the reader's attention.
+              </p>
+          </div>
+      </div>
+
+      <script>
+          const canvas = document.getElementById('shape');
+          const ctx = canvas.getContext('2d');
+          canvas.width = 300;
+          canvas.height = 300;
+
+          function drawShape(time) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              
+              ctx.beginPath();
+              for (let i = 0; i < 360; i++) {
+                  const angle = (i + time / 50) * Math.PI / 180;
+                  const radius = 100 + 20 * Math.sin(angle * 5);
+                  const x = canvas.width / 2 + radius * Math.cos(angle);
+                  const y = canvas.height / 2 + radius * Math.sin(angle);
+                  
+                  if (i === 0) {
+                      ctx.moveTo(x, y);
+                  } else {
+                      ctx.lineTo(x, y);
+                  }
+              }
+              ctx.closePath();
+
+              const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+              gradient.addColorStop(0, '#ff00ff');
+              gradient.addColorStop(1, '#00ffff');
+              
+              ctx.fillStyle = gradient;
+              ctx.fill();
+
+              requestAnimationFrame(drawShape);
+          }
+
+          drawShape(0);
+      </script>
+  </body>
+  </html>
+`
