@@ -4,125 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Three First Names & Associates</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-      
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-        background: linear-gradient(135deg, #2a0845 0%, #6441a5 100%);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-      }
-      
-      .container {
-        max-width: 1200px;
-        padding: 2rem;
-        box-sizing: border-box;
-      }
-      
-      .header {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      
-      .logo {
-        font-size: 2.5rem;
-        font-weight: bold;
-        background: linear-gradient(45deg, #00ffff, #ff00ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 0.5rem;
-        animation: pulse 2s infinite;
-      }
-      
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      
-      .tagline {
-        font-size: 1rem;
-        opacity: 0.8;
-      }
-      
-      .services {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-      }
-      
-      .service {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 2rem;
-        flex: 1;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
-        background-color 0.3s ease;
-      }
-      
-      .service:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-      
-      .service h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        background: linear-gradient(45deg, #00ffff, #ff00ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      
-      .service p {
-        font-size: 1rem;
-        opacity: 0.8;
-        transition: opacity 0.3s ease;
-      }
-      
-      .service:hover p {
-        opacity: 1;
-      }
-      
-      @media (prefers-reduced-motion: reduce) {
-        .logo,
-        .service {
-          animation: none;
-          transition: none;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .services {
-          flex-direction: column;
-        }
-      }
-      </style>
+    <link rel="stylesheet" href="./styles.css">
   </head>
+
+
   <body>
     <div class="container">
+      <!-- HEADER  -->
       <header class="header">
         <div class="logo">TFN</div>
-        <p class="tagline">Three First Names & Associates</p>
+        <p class="tagline"></p>Three First Names & Associates</p>
         <p class="tagline">
           
-          EMPOWERING BRANDS & AGENCIES TO STRIKE GOLD WITH CTV ADVERTISING</
+          EMPOWERING BRANDS & AGENCIES TO STRIKE GOLD WITH CTV ADVERTISING
         </p>
       </header>
+
+      <!-- SERVICES -->
       <div class="services">
         <div class="service">
           <h2>MEDIA SOLUTIONS</h2>
@@ -141,6 +39,43 @@
         </div>
       </div>
     </div>
+ 
+
+
+    <!-- TV Services  -->
+
+
+    <div class="tfn-services">
+      <h1>THREE FIRST NAMES MEDIA SOLUTIONS & MUSIC SERVICES</h1>
+      
+      <div class="service-grid">
+        <div class="service-item">
+          <img src="path_to_ctv_image.jpg" alt="Technical CTV Vendor Management & Support">
+          <h2>Technical CTV Vendor Management & Support</h2>
+          <p>Our expert team provides comprehensive management and support for Connected TV (CTV) vendors. We handle the technical intricacies of CTV advertising, ensuring seamless integration, optimized performance, and maximum ROI for your campaigns. Our services include vendor selection, platform setup, troubleshooting, and ongoing technical support to keep your CTV advertising running smoothly.</p>
+        </div>
+        
+        <div class="service-item">
+          <img src="path_to_tv_video_image.jpg" alt="TV/Video Media Insights & Optimization">
+          <h2>TV/Video Media Insights & Optimization</h2>
+          <p>Leverage our advanced analytics and industry expertise to gain deep insights into your TV and video media performance. We provide detailed analysis of viewership patterns, engagement metrics, and conversion data. Our team uses these insights to optimize your media strategy, ensuring your content reaches the right audience at the right time, maximizing impact and ROI across all TV and video platforms.</p>
+        </div>
+        
+        <div class="service-item">
+          <img src="path_to_music_samples_image.jpg" alt="Custom Music Samples for Commercial Use">
+          <h2>Custom Music Samples for Commercial Use</h2>
+          <p>Elevate your brand's audio identity with our custom music samples tailored for commercial use. Our team of experienced composers and producers creates unique, high-quality music that aligns perfectly with your brand message and target audience. Whether you need a catchy jingle, a powerful soundtrack for your video content, or background music for your app or website, we deliver custom audio solutions that make your brand stand out in the crowded media landscape.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+    
+
+<script src="./script.js">
+</script>
   </body>
   </html>
   

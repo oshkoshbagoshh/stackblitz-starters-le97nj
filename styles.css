@@ -1,169 +1,330 @@
- :root {
-  --color-purple: #440381;
-  --color-violet: #8338ec;
-  --color-cyan: #51e5ff;
-  --color-blue: #0056bf;
-  --color-black: #100b00;
-  --font-main: Arial, sans-serif;
-}
+/*****
+*
+* Style guide for Three First Names 
+* color scheme, animations, accessibility , fonts,
+*/
 
-html {
-  scroll-behavior: smooth;
-}
+:root {
+   --color-purple: #211e23;
+   --color-violet: #8338ec;
+   --color-cyan: #51e5ff;
+   --color-blue: #0056bf;
+   --color-black: #100b00;
+   --font-main: Arial, sans-serif;
+ }
 
-body {
-  font-family: var(--font-main);
-  background-color: var(--color-black);
-  color: var(--color-cyan);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
+ html {
+   scroll-behavior: smooth;
+ }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+ body {
+   font-family: var(--font-main);
+   background-color: var(--color-black);
+   color: var(--color-cyan);
+   margin: 0;
+   padding: 0;
+   line-height: 1.6;
+ }
 
-header {
-  background-color: var(--color-purple);
+ .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1rem;
+ }
+
+ header {
+   background-color: var(--color-purple);
+   color: white;
+   padding: 1rem;
+   text-align: center;
+ }
+
+ nav {
+   background-color: var(--color-blue);
+   padding: 0.5rem;
+ }
+
+ nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+
+ nav ul li {
+   margin: 0.5rem 1rem;
+ }
+
+ nav ul li a {
+   color: white;
+   text-decoration: none;
+   padding: 0.5rem;
+   border-radius: 4px;
+   transition: background-color 0.3s ease;
+ }
+
+ nav ul li a:hover,
+ nav ul li a:focus {
+   background-color: rgba(255, 255, 255, 0.2);
+   outline: none;
+ }
+
+ main {
+   padding: 2rem 0;
+ }
+
+ section {
+   margin-bottom: 2rem;
+ }
+
+ h1,
+ h2,
+ h3 {
+   color: var(--color-cyan);
+ }
+
+ .card {
+   background-color: var(--color-violet);
+   border-radius: 8px;
+   padding: 1.5rem;
+   margin-bottom: 1.5rem;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease;
+ }
+
+ .card:hover {
+   transform: translateY(-5px);
+ }
+
+ .button {
+   display: inline-block;
+   padding: 0.75rem 1.5rem;
+   border-radius: 4px;
+   text-decoration: none;
+   font-weight: bold;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   cursor: pointer;
+ }
+
+ .button:hover,
+ .button:focus {
+   transform: translateY(-2px);
+   outline: none;
+ }
+
+ .button-primary {
+   background-color: var(--color-blue);
+   color: white;
+ }
+
+ .button-primary:hover,
+ .button-primary:focus {
+   background-color: #0045a6;
+ }
+
+ .button-secondary {
+   background-color: var(--color-cyan);
+   color: var(--color-black);
+ }
+
+ .button-secondary:hover,
+ .button-secondary:focus {
+   background-color: #3dd1eb;
+ }
+
+ footer {
+   background-color: var(--color-purple);
+   color: white;
+   text-align: center;
+   padding: 1rem;
+   margin-top: 2rem;
+ }
+
+
+ /* Responsive design */
+ @media (max-width: 768px) {
+   nav ul {
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .card {
+     padding: 1rem;
+   }
+ }
+
+ /* Accessibility */
+ .sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap;
+   border-width: 0;
+ }
+
+ /* Focus styles for keyboard navigation */
+ :focus {
+   outline: 3px solid var(--color-cyan);
+   outline-offset: 2px;
+ }
+
+
+ /** From old in line  **/
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+ body,
+ html {
+   margin: 0;
+   padding: 0;
+   font-family: 'Roboto', sans-serif;
+   background: linear-gradient(135deg, #2a0845 0%, #6441a5 100%);
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+ }
+
+ .container {
+   max-width: 1200px;
+   padding: 2rem;
+   box-sizing: border-box;
+ }
+
+ .header {
+   text-align: center;
+   margin-bottom: 2rem;
+ }
+
+ .logo {
+   font-size: 2.5rem;
+   font-weight: bold;
+   background: linear-gradient(45deg, #00ffff, #ff00ff);
+   --webkit-background-clip: text;
+   --webkit-text-fill-color: transparent;
+   margin-bottom: 0.5rem;
+   z-index: -1;
+   /* Position */
+   /* animation: pulse 2s infinite; */
+ }
+
+ @keyframes pulse {
+   0% {
+     transform: scale(1);
+   }
+
+   50% {
+     transform: scale(1.05);
+   }
+
+   100% {
+     transform: scale(1);
+   }
+ }
+
+ .tagline {
+   font-size: 1rem;
+   opacity: 0.8;
+ }
+
+ .services {
+   display: flex;
+   gap: 2rem;
+   justify-content: center;
+ }
+
+ .service {
+   background: rgba(255, 255, 255, 0.1);
+   border-radius: 10px;
+   padding: 2rem;
+   flex: 1;
+   text-align: center;
+   transition: transform 0.3s ease, box-shadow 0.3s ease,
+     background-color 0.3s ease;
+ }
+
+ .service:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   background-color: rgba(255, 255, 255, 0.2);
+ }
+
+ .service h2 {
+   font-size: 1.8rem;
+   margin-bottom: 1rem;
+   background: linear-gradient(45deg, #00ffff, #ff00ff);
+   --webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+
+ .service p {
+   font-size: 1rem;
+   opacity: 0.8;
+   transition: opacity 0.3s ease;
+ }
+
+ .service:hover p {
+   opacity: 1;
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+
+   .logo,
+   .service {
+     animation: none;
+     transition: none;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .services {
+     flex-direction: column;
+   }
+ }
+
+ 
+ .tfn-services {
+  background: linear-gradient(135deg, #4a0080 0%, #000080 100%);
   color: white;
-  padding: 1rem;
+  padding: 2rem;
+}
+
+.tfn-services h1 {
   text-align: center;
-}
-
-nav {
-  background-color: var(--color-blue);
-  padding: 0.5rem;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-nav ul li {
-  margin: 0.5rem 1rem;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: none;
-}
-
-main {
-  padding: 2rem 0;
-}
-
-section {
   margin-bottom: 2rem;
 }
 
-h1,
-h2,
-h3 {
-  color: var(--color-cyan);
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-.card {
-  background-color: var(--color-violet);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.button:hover,
-.button:focus {
-  transform: translateY(-2px);
-  outline: none;
-}
-
-.button-primary {
-  background-color: var(--color-blue);
-  color: white;
-}
-
-.button-primary:hover,
-.button-primary:focus {
-  background-color: #0045a6;
-}
-
-.button-secondary {
-  background-color: var(--color-cyan);
-  color: var(--color-black);
-}
-
-.button-secondary:hover,
-.button-secondary:focus {
-  background-color: #3dd1eb;
-}
-
-footer {
-  background-color: var(--color-purple);
-  color: white;
-  text-align: center;
+.service-item {
+  background: rgba(255, 255, 255, 0.1);
   padding: 1rem;
-  margin-top: 2rem;
+  border-radius: 10px;
 }
 
-
-/* Responsive design */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    padding: 1rem;
-  }
+.service-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-/* Accessibility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+.service-item h2 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }
 
-/* Focus styles for keyboard navigation */
-:focus {
-  outline: 3px solid var(--color-cyan);
-  outline-offset: 2px;
-} */
+.service-item p {
+  font-size: 0.9rem;
+}
+ 
