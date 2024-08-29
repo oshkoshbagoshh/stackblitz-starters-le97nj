@@ -1,17 +1,17 @@
 ====================
 
 - font library
-
 - color test
-
 - ramp up the animations with svgs 
-
 - form
-
 - sections
-
 - import into wordpress
-
+-  light form 
+- dark form
+- folder structure
+- accessibility kit:
+- https://github.com/oshkoshbagoshh/penta-accessibility-toolkit/blob/main/Cheatsheats/Website%20Accessibility%20Checklist.m
 - 
-
+- 
 ===============
+
