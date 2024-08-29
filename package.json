@@ -1,10 +1,13 @@
 {
   "scripts": {
-    "start": "servor --reload"
+    "start": "servor --reload",
+    "sass": "sass --watch src/scss:dist/css"
   },
   "dependencies": {
     "material-icons": "^1.13.12",
-    "sass": "^1.77.8",
     "servor": "^4.0.2"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
   }
 }

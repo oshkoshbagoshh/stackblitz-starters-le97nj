@@ -94,3 +94,7 @@ build.bat
 # Ignore deployment scripts
 deploy.sh
 deploy.bat
+
+
+# Ignore todo, misc
+TODO.txt
