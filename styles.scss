@@ -1,0 +1,244 @@
+// Style guide for Three First Names
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// Variables
+$color-purple: #211e23;
+$color-violet: #8338ec;
+$color-cyan: #51e5ff;
+$color-blue: #0056bf;
+$color-black: #100b00;
+$font-main: 'Roboto', Arial, sans-serif;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Global styles
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-main;
+  background: linear-gradient(135deg, #2a0845 0%, #6441a5 100%);
+  color: $color-cyan;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  min-height: 100vh;
+  @include flex-center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+// Typography
+h1, h2, h3 {
+  color: $color-cyan;
+}
+
+// Header and Navigation
+header {
+  background-color: $color-purple;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  background-color: $color-blue;
+  padding: 0.5rem;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    li {
+      margin: 0.5rem 1rem;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+
+        &:hover,
+        &:focus {
+          background-color: rgba(255, 255, 255, 0.2);
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+// Main content
+main {
+  padding: 2rem 0;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+// Cards
+.card {
+  background-color: $color-violet;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  &-primary {
+    background-color: $color-blue;
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-blue, 10%);
+    }
+  }
+
+  &-secondary {
+    background-color: $color-cyan;
+    color: $color-black;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-cyan, 10%);
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $color-purple;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+// Accessibility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Focus styles for keyboard navigation
+:focus {
+  outline: 3px solid $color-cyan;
+  outline-offset: 2px;
+}
+
+// Services section
+.tfn-services {
+  background: linear-gradient(135deg, #4a0080 0%, #000080 100%);
+  color: white;
+  padding: 2rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    color: #444;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #666;
+  }
+}
+
+.icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #3498db;
+}
