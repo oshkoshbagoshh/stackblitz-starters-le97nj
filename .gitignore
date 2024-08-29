@@ -1,1 +1,23 @@
 node_modules
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore .env
+.env
+
+# Ignore compiled CSS files
+*.css
+
+# Ignore compiled SASS files
+*.css.map
+*.sassc
+.sass-cache/
+
+# Ignore compiled JavaScript files
+*.js
+*.js.map
+
+
+# Ignore my todo
+TODO.txt
