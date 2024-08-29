@@ -1,0 +1,17 @@
+====================
+
+- font library
+
+- color test
+
+- ramp up the animations with svgs 
+
+- form
+
+- sections
+
+- import into wordpress
+
+- 
+
+===============
