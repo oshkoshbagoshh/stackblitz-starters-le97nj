@@ -290,3 +290,41 @@
  }
 
  
+ .tfn-services {
+  background: linear-gradient(135deg, #4a0080 0%, #000080 100%);
+  color: white;
+  padding: 2rem;
+}
+
+.tfn-services h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.service-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.service-item h2 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.service-item p {
+  font-size: 0.9rem;
+}
+ 
