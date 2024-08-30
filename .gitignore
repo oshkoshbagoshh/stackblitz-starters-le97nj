@@ -98,3 +98,14 @@ deploy.bat
 
 # Ignore todo, misc
 TODO.txt
+
+
+# Ignore compiled CSS
+*.css
+
+# But don't ignore source SCSS
+!*.scss
+
+# Ignore other build artifacts
+node_modules/
+dist/
