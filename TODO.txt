@@ -1,7 +1,6 @@
 ====================
 ## TODO: 
 
-
 - import into wordpress via wp cli 
 - MySQL database checks 
 - PHP
@@ -10,7 +9,7 @@
 - pentacost.ai checklist / cheatsheet
 
 
-
+-
 - font library
 - color test
 - ramp up the animations with svgs 
@@ -25,4 +24,9 @@
 - 
 - 
 ===============
+
+- 2024-08-29 21:14:05
+    - Create SASS variable mixins for supporting any color schema
+    - file organizer script
+    - create associative array for all of the files and start serving them with LOCALHOST:8000
 
