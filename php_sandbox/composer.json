@@ -1,6 +1,0 @@
-{
-    "name": "sandbox/project",
-    "require": {
-        "php": "^7.4"
-    }
-}

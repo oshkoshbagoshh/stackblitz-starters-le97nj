@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /***
  * 
@@ -6,7 +6,7 @@
  * 
  
  * At its most basic, a theme’s structure will look similar to the following. Take note of the files/folders marked required because they are necessary for a block theme to work:
-        parts/
+        arts/
         footer.html
         header.html
         patterns/
