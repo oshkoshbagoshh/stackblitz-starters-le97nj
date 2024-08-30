@@ -1,9 +1,97 @@
 // Style guide for Three First Names
 
 // Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+// Variables for light mode
+$light-color-background: #f0f0f0;
+$light-color-text: #100b00;
+$light-color-primary: #0056bf;
+$light-color-secondary: #8338ec;
+$light-color-accent: #51e5ff;
+$light-color-card: #ffffff;
 
+// Variables for dark mode
+$dark-color-background: #211e23;
+$dark-color-text: #f0f0f0;
+$dark-color-primary: #51e5ff;
+$dark-color-secondary: #8338ec;
+$dark-color-accent: #0056bf;
+$dark-color-card: #2a2a2a;
+
+// Common variables
+$font-main: "Roboto", Arial, sans-serif;
+
+// Mixins (keep the existing ones)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Light mode styles
+body {
+  font-family: $font-main;
+  background-color: $light-color-background;
+  color: $light-color-text;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background-color: $light-color-card;
+  color: $light-color-text;
+}
+
+.button-primary {
+  background-color: $light-color-primary;
+  color: white;
+}
+
+.button-secondary {
+  background-color: $light-color-secondary;
+  color: white;
+}
+
+// Dark mode styles
+body.dark-mode {
+  background-color: $dark-color-background;
+  color: $dark-color-text;
+
+  .card {
+    background-color: $dark-color-card;
+    color: $dark-color-text;
+  }
+
+  .button-primary {
+    background-color: $dark-color-primary;
+    color: $dark-color-text;
+  }
+
+  .button-secondary {
+    background-color: $dark-color-secondary;
+    color: $dark-color-text;
+  }
+}
+
+// Add this to your existing styles
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+// Keep the rest of your existing styles...
 
 // Variables
 $color-purple: #211e23;
@@ -11,7 +99,7 @@ $color-violet: #8338ec;
 $color-cyan: #51e5ff;
 $color-blue: #0056bf;
 $color-black: #100b00;
-$font-main: 'Roboto', Arial, sans-serif;
+$font-main: "Roboto", Arial, sans-serif;
 
 // Mixins
 @mixin flex-center {
@@ -50,7 +138,9 @@ body {
 }
 
 // Typography
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: $color-cyan;
 }
 
