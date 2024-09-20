@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "servor --reload"
+    "start": "servor --reload",
+    "build-sass": "sass styles.scss styles.css"
   },
   "dependencies": {
     "material-icons": "^1.13.12",
