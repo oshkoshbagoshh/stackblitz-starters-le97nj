@@ -1,244 +1,155 @@
-// Style guide for Three First Names
 
-// Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap');
 
 // Variables
-$color-purple: #211e23;
-$color-violet: #8338ec;
-$color-cyan: #51e5ff;
-$color-blue: #0056bf;
-$color-black: #100b00;
-$font-main: 'Roboto', Arial, sans-serif;
+$smoky-black: #100B00;
+$indigo: #440381;
+$blue-violet: #8338EC;
+$sapphire: #0056BF;
+$sapphire-dark: #00449E;
+$white: #FFFFFF;
+
+$body-font: 'Open Sans', sans-serif;
+$heading-font: 'Rubik', sans-serif;
 
 // Mixins
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
 }
 
-@mixin gradient-text($gradient) {
-  background: $gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-// Global styles
-html {
-  scroll-behavior: smooth;
-}
-
+// Base styles
 body {
-  font-family: $font-main;
-  background: linear-gradient(135deg, #2a0845 0%, #6441a5 100%);
-  color: $color-cyan;
-  margin: 0;
-  padding: 0;
+  font-family: $body-font;
+  font-size: 16px;
   line-height: 1.6;
-  min-height: 100vh;
-  @include flex-center;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  box-sizing: border-box;
+  color: $smoky-black;
+  background-color: $white;
 }
 
 // Typography
-h1, h2, h3 {
-  color: $color-cyan;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  color: $indigo;
+  margin: 0 0 15px;
 }
 
-// Header and Navigation
-header {
-  background-color: $color-purple;
-  color: white;
-  padding: 1rem;
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+p { 
+  margin: 0 0 15px;
+}
+
+a {
+  color: $indigo;
+  text-decoration: none;
+  @include transition(color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.caption {
+  font-family: $body-font;
+  color: $blue-violet;
+  font-size: 0.9em;
+}
+
+// Layout
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Buttons
+.button {
+  font-family: $heading-font;
+  background-color: $sapphire;
+  color: $white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   text-align: center;
+  display: inline-block;
+  font-size: 1em;
+  @include transition(background-color);
+
+  &:hover {
+    background-color: $sapphire-dark;
+  }
 }
 
-nav {
-  background-color: $color-blue;
-  padding: 0.5rem;
+// Forms
+.form {
+  &-group {
+    margin-bottom: 1em;
+  }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  &-label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: $smoky-black;
+  }
 
-    li {
-      margin: 0.5rem 1rem;
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $indigo;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: $body-font;
+    @include transition(border-color);
 
-      a {
-        color: white;
-        text-decoration: none;
-        padding: 0.5rem;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
+    &:focus {
+      outline: none;
+      border-color: $blue-violet;
+    }
+  }
+}
 
-        &:hover,
-        &:focus {
-          background-color: rgba(255, 255, 255, 0.2);
-          outline: none;
-        }
+// Utility classes
+.text {
+  &-center { text-align: center; }
+  &-left { text-align: left; }
+  &-right { text-align: right; }
+}
+
+@each $direction in top, bottom, left, right {
+  .m#{str-slice($direction, 0, 1)}-1 { margin-#{$direction}: 1em; }
+  .p#{str-slice($direction, 0, 1)}-1 { padding-#{$direction}: 1em; }
+}
+
+// Responsive design
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    .container {
+      @if $breakpoint == sm {
+        max-width: 540px;
+      } @else if $breakpoint == md {
+        max-width: 720px;
+      } @else if $breakpoint == lg {
+        max-width: 960px;
+      } @else if $breakpoint == xl {
+        max-width: 1140px;
       }
     }
   }
 }
 
-// Main content
-main {
-  padding: 2rem 0;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-// Cards
-.card {
-  background-color: $color-violet;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
-
-// Buttons
-.button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    transform: translateY(-2px);
-    outline: none;
-  }
-
-  &-primary {
-    background-color: $color-blue;
-    color: white;
-
-    &:hover,
-    &:focus {
-      background-color: darken($color-blue, 10%);
-    }
-  }
-
-  &-secondary {
-    background-color: $color-cyan;
-    color: $color-black;
-
-    &:hover,
-    &:focus {
-      background-color: darken($color-cyan, 10%);
-    }
-  }
-}
-
-// Footer
-footer {
-  background-color: $color-purple;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-// Responsive design
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-}
-
-// Accessibility
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-// Focus styles for keyboard navigation
-:focus {
-  outline: 3px solid $color-cyan;
-  outline-offset: 2px;
-}
-
-// Services section
-.tfn-services {
-  background: linear-gradient(135deg, #4a0080 0%, #000080 100%);
-  color: white;
-  padding: 2rem;
-
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.service-item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    color: #444;
-    margin-bottom: 10px;
-  }
-
-  p {
-    color: #666;
-  }
-}
-
-.icon {
-  font-size: 48px;
-  margin-bottom: 15px;
-  color: #3498db;
-}
