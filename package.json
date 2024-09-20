@@ -4,6 +4,7 @@
     "build-sass": "sass styles.scss styles.css"
   },
   "dependencies": {
+    "bootstrap": "5.3",
     "material-icons": "^1.13.12",
     "sass": "^1.77.8",
     "servor": "^4.0.2"
