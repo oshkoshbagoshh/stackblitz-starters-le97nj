@@ -7,3 +7,5 @@
 - animations
 - color checks
 - pentacost.ai checklist / cheatsheet
+- convert HTML parts into PHP
+- combine everything into one file
